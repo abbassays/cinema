@@ -3,6 +3,7 @@
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\BookingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +14,14 @@ use App\Http\Controllers\MovieController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome',[
-//         'movies' => Movies::all()
-//     ]);
-// });
-
 Route::get('/', [MovieController::class , 'store_movies']);
+
+// Route::get('/booking', [BookingController::class , 'index']);
+// Route::post('/save_booking', [BookingController::class , 'save'])->name('booking.save');
+
+Route::get('/about', function () {
+    return view('about');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
