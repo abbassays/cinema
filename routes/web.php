@@ -16,9 +16,6 @@ use App\Http\Controllers\BookingController;
 */
 Route::get('/', [MovieController::class , 'store_movies']);
 
-// Route::get('/booking', [BookingController::class , 'index']);
-// Route::post('/save_booking', [BookingController::class , 'save'])->name('booking.save');
-
 Route::get('/about', function () {
     return view('about');
 });
