@@ -273,6 +273,7 @@
      justify-content: center;
      align-items: center;
 }
+
  .loader img {
      width: 280px;
 }
@@ -344,6 +345,9 @@
 /*--------------------------------------------------------------------- header area ---------------------------------------------------------------------*/
  .logo_section {
      text-align: center;
+}
+.nav-section{
+    padding-top: 30px;
 }
  .logo {
      float: left;
@@ -978,11 +982,17 @@ transition: all 0.3s ease-in;
     
      min-height: 980px;
 }
+.bg-img{
+    position: relative;
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
  .header {
      position: absolute;
      z-index: 999;
      width: 100%;
-     padding: 30px 0px 0px 0px;
+     background-color: #020d0f;
 }
  .logo a {
      font-size: 40px;

@@ -1,7 +1,8 @@
 <?php
 
+use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome',[
+//         'movies' => Movies::all()
+//     ]);
+// });
+
+Route::get('/', [MovieController::class , 'store_movies']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
