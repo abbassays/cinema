@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Ticket;
 use App\Models\MovieShowTime;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
-{   
+{
     // this will be used on the home page
     function show()
     {
@@ -25,8 +26,8 @@ class MovieController extends Controller
         ]);
     }
 
-    function showtimes(Request $request)
-    {   
+    function show_times(Request $request)
+    {
         $id = $request->query('movieid');
         $showtimes = MovieShowTime::query()->where('belongs_to', $id)->get();
         return response()->json([
@@ -34,5 +35,10 @@ class MovieController extends Controller
         ]);
     }
 
-
+    function show_tickets(Request $request)
+    {
+        $id = $request->query('showtimeid');
+        $tickets = Ticket::query()->where('show_time_id', $id)->count();
+        return $tickets;
+    }
 }

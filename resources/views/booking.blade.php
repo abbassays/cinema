@@ -20,7 +20,7 @@
 
     <h1>Book a Ticket</h1>
 
-    <img src="" alt="Selected Movie Poster">
+    <img src="" id="movie_poster" alt="Selected Movie Poster">
 
     <form action="#" method="get" id="form">
 
@@ -39,7 +39,8 @@
         </select>
         <br>
 
-
+        <label for="movie">Select at most 10 Tickets</label>
+        <br>
         <label for="movie">Select Number of Member Tickets:</label>
         <br>
         <select name="m_tickets" id="m_tickets">

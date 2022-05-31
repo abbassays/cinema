@@ -22,8 +22,9 @@ Route::get('/', [MovieController::class , 'store_movies']);
 // return a json object of all the movies that have been released/now showing
 Route::get('now-showing', [MovieController::class , 'now_showing']);
 
+Route::get('show-times', [MovieController::class , 'show_times']);
 
-Route::get('showtimes', [MovieController::class , 'showtimes']);
+Route::get('show-tickets', [MovieController::class , 'show_tickets']);
 
 // About page route
 Route::get('/about', function () {
