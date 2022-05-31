@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('movies');
         Schema::create('movies', function (Blueprint $table) {
-            $table->id();
+            $table->integer('movie_id')->unsigned();
+            $table->primary('movie_id');
             $table->string('title')->nullable(false);
             $table->string('movie_poster');
-            $table->string('description')->nullable(false);
+            $table->longText('description')->nullable(false);
             $table->integer('duration_min');
-            $table->boolean('3d')->nullable(false);
             $table->date('release_date')->nullable(false);
         });
     }

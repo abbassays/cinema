@@ -9,4 +9,5 @@ class Movie extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $primaryKey = 'movie_id';
 }

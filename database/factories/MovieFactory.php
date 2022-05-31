@@ -18,15 +18,15 @@ class MovieFactory extends Factory
     {
         // creating a dummy movies table
         return [
+            'movie_id' => $this->faker->unique()->numberBetween(1,100),
             'title' => $this->faker->name(),
             'movie_poster' => '/images/',
             /* image name will go after '/' */
             /* image is stored in image folder by admin by cut paste
                 path is stored in 'movie_poster'
                 path is displayed */
-            'description' => $this->faker->paragraph(3),
+            'description' => $this->faker->paragraph(5),
             'duration_min' => $this->faker->numberBetween(90, 180),
-            '3d' => $this->faker->boolean(),
             'release_date' => $this->faker->date(),
         ];
     }
