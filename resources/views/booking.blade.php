@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="js/jquery.min.js"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="{{asset('js/booking.js')}}"></script>
 
     <title>Document</title>
@@ -22,8 +23,9 @@
 
     <img src="" alt="Selected Movie Poster">
 
-    <form action="{{route('booking.save')}}" method="POST" id="form">
+    <form action="javascript:void(0)" method="POST" id="form">
 
+        @csrf
         <label for="movie">Select a movie:</label>
         <br>
         <select name="movie_title" id="movie">
@@ -54,14 +56,14 @@
 
         <label for="movie">Select Number of Tickets:</label>
         <br>
-        <select name="tickets" id="tickets">
+        <select name="n_tickets" id="tickets">
             <option disabled selected value> -- select an option -- </option>
             <option value="">1</option>
             <option value="">2</option>
             <option value="">3</option>
         </select>
         <br>
-        <input type="submit" name="" value="proceed to seat selection" id="">
+        <input type="submit" name="submit" value="proceed to seat selection" id="submit">
     </form>
 </body>
 
