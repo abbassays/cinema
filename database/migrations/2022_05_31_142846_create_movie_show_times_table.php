@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('movie_show_times');
+        // Schema::dropIfExists('movie_show_times');
         Schema::create('movie_show_times', function (Blueprint $table) {
                 $table->integer('movie_show_time_id')->unsigned();
                 $table->primary('movie_show_time_id');
