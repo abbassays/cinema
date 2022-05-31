@@ -19,8 +19,11 @@ use App\Http\Controllers\SelectTicketsController;
 // Landing page route
 Route::get('/', [MovieController::class , 'store_movies']);
 
-Route::get('fetch-movie', [SelectTicketsController::class , 'fetchMovieDetails']);
-Route::post('fetch-movie-showtime', [SelectTicketsController::class , 'fetchShowTimeDetails']);
+// return a json object of all the movies that have been released/now showing
+Route::get('now-showing', [MovieController::class , 'now_showing']);
+
+
+Route::get('showtimes', [MovieController::class , 'showtimes']);
 
 // About page route
 Route::get('/about', function () {

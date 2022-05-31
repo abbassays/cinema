@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    @php
+        echo $movies;
+    @endphp
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,15 +17,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- fevicon -->
-    <link rel="icon" href="{{asset('images/fevicon.png')}}" type="image/gif" />
+    <link rel="icon" href="{{ asset('images/fevicon.png') }}" type="image/gif" />
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- style css -->
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Responsive-->
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
@@ -70,146 +73,147 @@
                                     @extends('layouts.footer')
                                     @section('content')
 
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end header inner -->
+
+                <!-- end header -->
+                <section class="slider_section">
+                    {{--  --}}
+
+                    <div class="abs">
+
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+
+
+
+                                {{-- start loop here --}}
+
+                                <div class="carousel-item active abs">
+                                    <div class="container">
+                                        <div class="carousel-caption">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-bg">
+                                                        <span>NOW SHOWING</span>
+                                                        {{-- @foreach ($movies as $movie) --}}
+                                                        {{-- {{$movies[0]['movie_poster']}} --}}
+                                                        <h1>{{ $movies[0]['title'] }}</h1>
+                                                        <p>{{ $movies[0]['description'] }}</p>
+                                                        <img class="bg-img" src="{{ $movies[1]['movie_poster'] }}"
+                                                            alt="">
+
+                                                        {{-- @endforeach --}}
+                                                        <a href="#">Music & Entertainment</a> <a href="#">Buy Tickets </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{--  --}}
+
+
+                                <div class="carousel-item">
+
+                                    <div class="container ">
+                                        <div class="carousel-caption">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-bg">
+                                                        <span>NOW SHOWING</span>
+                                                        <h1>{{ $movies[1]['title'] }}</h1>
+                                                        <p>{{ $movies[1]['description'] }}</p>
+                                                        <a href="#">Music & Entertainment</a><a href="#">Buy Tickets </a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="carousel-item">
+
+                                    <div class="container">
+                                        <div class="carousel-caption ">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="text-bg">
+                                                        <span>NOW SHOWING</span>
+                                                        <h1>{{ $movies[2]['title'] }}</h1>
+                                                        <p>{{ $movies[2]['description'] }}</p>
+                                                        <a href="#">Music & Entertainment</a> <a href="#">Buy Tickets </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+
+                            </a>
+                            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
+                            </a>
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+        </header>
+
+        <!-- upcoming -->
+        <div id="upcoming" class="upcoming">
+            <div class="container-fluid padding_left3">
+                <div class="row display_boxflex">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                        <div class="box_text">
+                            <div class="titlepage">
+                                <h2>Upcoming Concerts</h2>
+                            </div>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a
+                                page when
+                                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                                distribution of
+                                letters, as opposed to using 'Content here, content here', making it lookIt is a long
+                                established fact
+                                that a reader will be distracted by the readable content of a page when looking at its
+                                layout. The point
+                                of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+                                opposed to using
+                                'Content here, content here', making it look</p>
+                            <a href="Javascript:void(0)">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 border_right">
+                        <div class="upcomimg">
+                            <figure><img src="images/up.jpg" alt="#" /></figure>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- end header inner -->
-
-            <!-- end header -->
-            <section class="slider_section">
-                {{-- --}}
-
-                <div class="abs">
-
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-
-
-
-                            {{-- start loop here --}}
-                            
-                            <div class="carousel-item active abs">
-                                <div class="container">
-                                    <div class="carousel-caption">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-bg">
-                                                    <span>NOW SHOWING</span>
-                                                    {{-- @foreach ($movies as $movie) --}}
-                                                    {{-- {{$movies[0]['movie_poster']}} --}}
-                                                    <h1>{{$movies[0]['title']}}</h1>
-                                                    <p>{{$movies[0]['description']}}</p>
-                                                    <img class="bg-img" src="{{$movies[1]['movie_poster']}}" alt="">
-
-                                                    {{-- @endforeach --}}
-                                                    <a href="#">Music & Entertainment</a> <a href="#">Buy Tickets </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- --}}
-
-
-                            <div class="carousel-item">
-
-                                <div class="container ">
-                                    <div class="carousel-caption">
-
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-bg">
-                                                    <span>NOW SHOWING</span>
-                                                    <h1>{{$movies[1]['title']}}</h1>
-                                                    <p>{{$movies[1]['description']}}</p>
-                                                    <a href="#">Music & Entertainment</a><a href="#">Buy Tickets </a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <div class="carousel-item">
-
-                                <div class="container">
-                                    <div class="carousel-caption ">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="text-bg">
-                                                    <span>NOW SHOWING</span>
-                                                    <h1>{{$movies[2]['title']}}</h1>
-                                                    <p>{{$movies[2]['description']}}</p>
-                                                    <a href="#">Music & Entertainment</a> <a href="#">Buy Tickets </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-                        </a>
-                    </div>
-
-                </div>
-
-            </section>
         </div>
-    </header>
-
-    <!-- upcoming -->
-    <div id="upcoming" class="upcoming">
-        <div class="container-fluid padding_left3">
-            <div class="row display_boxflex">
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
-                    <div class="box_text">
-                        <div class="titlepage">
-                            <h2>Upcoming Concerts</h2>
-                        </div>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a
-                            page when
-                            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of
-                            letters, as opposed to using 'Content here, content here', making it lookIt is a long
-                            established fact
-                            that a reader will be distracted by the readable content of a page when looking at its
-                            layout. The point
-                            of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-                            opposed to using
-                            'Content here, content here', making it look</p>
-                        <a href="Javascript:void(0)">Read More</a>
-                    </div>
-                </div>
-
-                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 border_right">
-                    <div class="upcomimg">
-                        <figure><img src="images/up.jpg" alt="#" /></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end upcoming -->
+        <!-- end upcoming -->
 
     @stop
 
