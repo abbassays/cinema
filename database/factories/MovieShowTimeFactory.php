@@ -16,10 +16,12 @@ class MovieShowTimeFactory extends Factory
      */
     public function definition()
     {
+        $currentWeek = date('Y-m-d');
         return [
             'movie_show_time_id'=> $this->faker->unique()->numberBetween(1,100),
-            'date' => $this->faker->date(),
-            'time' => $this->faker->time(),
+            'start_time' => $currentWeek,
+            'time' => $this->faker->randomElement(['15:00:00','18:00:00','21:00:00']),
+            // 'time' => $this->faker->time(),
             '3d' => $this->faker->boolean(),
         ];
     }

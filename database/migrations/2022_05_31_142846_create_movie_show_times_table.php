@@ -18,7 +18,8 @@ return new class extends Migration
                 $table->integer('movie_show_time_id')->unsigned();
                 $table->primary('movie_show_time_id');
                 $table->date('date')->nullable(false);
-                $table->time('time')->nullable(false);
+                $table->set('time',['15:00:00','18:00:00','21:00:00']);
+                // $table->time('time')->nullable(false);
                 $table->boolean('3d')->nullable(false);
         });
     }
